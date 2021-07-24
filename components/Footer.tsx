@@ -16,29 +16,29 @@ export default function Footer() {
             © 2021, PT. Bumi Laju Raya
           </span>
         </Col>
-        <Col lg={{ span: 2, offset: 1 }}>
+        <Col lg={{ span: 2 }}>
           <Image
             src={IG}
             className="mx-2"
-            style={{ width: "50px", height: "50px" }}
+            style={{ width: "40px", height: "40px" }}
             alt="Instagram Bumi Laju Raya"
           />
           <Image
             src={FB}
-            className="mx-2"
-            style={{ width: "50px", height: "50px" }}
+            className="mx-1"
+            style={{ width: "40px", height: "40px" }}
             alt="Facebook Bumi Laju Raya"
           />
           <Image
             src={TW}
-            className="mx-2"
-            style={{ width: "50px", height: "50px" }}
+            className="mx-1"
+            style={{ width: "40px", height: "40px" }}
             alt="Twitter Bumi Laju Raya"
           />
           <Image
             src={WA}
-            className="mx-2"
-            style={{ width: "50px", height: "50px" }}
+            className="mx-1"
+            style={{ width: "40px", height: "40px" }}
             alt="Whatsapp Bumi Laju Raya"
           />
         </Col>
