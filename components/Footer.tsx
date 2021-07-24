@@ -19,7 +19,7 @@ export default function Footer() {
         <Col lg={{ span: 2 }}>
           <Image
             src={IG}
-            className="mx-2"
+            className="mx-1"
             style={{ width: "40px", height: "40px" }}
             alt="Instagram Bumi Laju Raya"
           />
