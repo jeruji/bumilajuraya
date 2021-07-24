@@ -8,8 +8,30 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@react-leaflet/core": ">=1.0.0 <1.1.0 || ^1.1.1",
+    "@sanity/block-content-to-react": "^3.0.0",
+    "@sanity/client": "^2.8.0",
+    "@sanity/image-url": "^0.140.22",
+    "bootstrap": "^5.0.1",
+    "emailjs-com": "^3.1.0",
+    "leaflet": "^1.7.1",
+    "moment": "^2.29.1",
     "next": "11.0.1",
+    "next-images": "^1.7.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-bootstrap": "^1.6.0",
+    "react-dom": "17.0.2",
+    "react-leaflet": ">=3.1.0 <3.2.0 || ^3.2.1",
+    "react-responsive-carousel": "^3.2.20",
+    "sass": "^1.32.13",
+    "swr": "^0.5.6"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.7.2",
+    "@types/react": "^17.0.5",
+    "typescript": "^4.2.4"
   }
 }

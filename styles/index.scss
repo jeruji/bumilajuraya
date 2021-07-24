@@ -1,0 +1,61 @@
+$colorGray: #e2e6ea;
+$colorWhite: #ffffff;
+$colorMenuDefault: #4a637f;
+$calibry: Calibri, sans-serif;
+
+.bg-gray {
+  background-color: $colorGray;
+}
+
+.mw-100 {
+  max-width: 100%;
+}
+
+.width-logo {
+  width: 200px;
+}
+
+.vertical-center {
+  top: 50%;
+  transform: translateY(-50%);
+  position: relative;
+}
+
+.nav-link {
+  font-size: 12pt;
+  color: $colorMenuDefault !important;
+  font-weight: 500;
+  font-family: $calibry;
+}
+
+.footer-text {
+  font-size: 12pt;
+  color: $colorMenuDefault;
+  font-family: $calibry;
+}
+
+.dropdown-item {
+  font-size: 12pt;
+  color: $colorWhite;
+  font-family: $calibry;
+  font-weight: 500;
+  border-bottom: 1px solid $colorGray;
+
+  :hover {
+    color: $colorMenuDefault;
+  }
+}
+
+.dropdown-menu {
+  background-color: $colorMenuDefault;
+}
+
+.margin-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.set-to-back {
+  z-index: -1;
+  position: relative;
+}
