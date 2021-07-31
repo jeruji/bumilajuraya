@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+import ErrorPage from "next/error";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import BlogContent from "components/BlogContent";
@@ -6,6 +8,22 @@ import { Container, Image, Col } from "react-bootstrap";
 import { urlFor } from "lib/api";
 
 export default function ContentBySlug({ pages }) {
+  const router = useRouter();
+
+  if (!router.isFallback && !pages?.slug) {
+    return <ErrorPage statusCode={404} />;
+  }
+
+  if (router.isFallback) {
+    return (
+      <>
+        <Header />
+        <Container className="mw-100">Loading</Container>
+        <Footer />
+      </>
+    );
+  }
+
   return (
     <>
       <Header />
