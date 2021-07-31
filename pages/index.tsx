@@ -1,3 +1,4 @@
+import { Container } from "react-bootstrap";
 import Header from "components/Header";
 import ImageCarousel from "components/ImageCarousel";
 import Footer from "components/Footer";
@@ -6,8 +7,10 @@ import { getCarouselImages } from "lib/api";
 export default function Home({ images }) {
   return (
     <>
-      <Header />
-      <ImageCarousel images={images[0].images} />
+      <Container className="mw-100">
+        <Header />
+        <ImageCarousel images={images[0].images} />
+      </Container>
       <Footer />
     </>
   );
