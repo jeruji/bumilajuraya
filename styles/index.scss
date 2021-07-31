@@ -7,6 +7,10 @@ $calibry: Calibri, sans-serif;
   background-color: $colorGray;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .mw-100 {
   max-width: 100%;
 }
@@ -28,6 +32,16 @@ $calibry: Calibri, sans-serif;
   font-family: $calibry;
 }
 
+.title-content {
+  font-size: 24pt;
+  padding-left: 50px;
+  top: 30%;
+  position: absolute;
+  color: $colorMenuDefault !important;
+  font-weight: 500;
+  font-family: $calibry;
+}
+
 .footer-text {
   font-size: 12pt;
   color: $colorMenuDefault;
@@ -35,15 +49,18 @@ $calibry: Calibri, sans-serif;
 }
 
 .dropdown-item {
-  font-size: 12pt;
-  color: $colorWhite;
-  font-family: $calibry;
   font-weight: 500;
   border-bottom: 1px solid $colorGray;
 
   :hover {
     color: $colorMenuDefault;
   }
+}
+
+.calibri-white {
+  font-size: 12pt;
+  color: $colorWhite;
+  font-family: $calibry;
 }
 
 .dropdown-menu {
@@ -58,4 +75,11 @@ $calibry: Calibri, sans-serif;
 .set-to-back {
   z-index: -1;
   position: relative;
+}
+
+.text-image-positioning {
+  padding-left: 50px;
+  text-align: justify;
+  position: absolute;
+  top: 50%;
 }

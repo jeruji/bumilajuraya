@@ -1,6 +1,7 @@
 import { Carousel } from "react-responsive-carousel";
+import { urlFor } from "lib/api";
 
-export default function ImageCarousel() {
+export default function ImageCarousel({ images }) {
   return (
     <Carousel
       autoPlay={true}
@@ -9,15 +10,13 @@ export default function ImageCarousel() {
       showStatus={false}
       showThumbs={false}
     >
-      <div>
-        <img src="/images/menu-01.png" />
-      </div>
-      <div>
-        <img src="/images/menu-02.png" />
-      </div>
-      <div>
-        <img src="/images/menu-03.png" />
-      </div>
+      {images.map((image, index) => {
+        return (
+          <div key={`container-carousel-${index}`}>
+            <img src={urlFor(image).url()} alt={image.alt} />
+          </div>
+        );
+      })}
     </Carousel>
   );
 }

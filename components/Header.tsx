@@ -8,33 +8,89 @@ import {
   Form,
   FormControl,
 } from "react-bootstrap";
+import Link from "next/link";
 import Search from "public/images/Search.svg";
 
 export default function Header() {
   return (
-    <Container className="bg-gray mw-100">
+    <Container className="bg-gray mw-100 mt-3">
       <Row className="margin-center">
         <Col lg="3" xs="4">
           <Image src="/images/logo-blr-50.png" className="p-4 width-logo" />
         </Col>
         <Col lg={{ span: 4, offset: 2 }}>
           <Nav className="vertical-center">
-            <Nav.Link as="div">Home</Nav.Link>
+            <Link href="/">
+              <Nav.Link as="div" className="cursor-pointer">
+                Home
+              </Nav.Link>
+            </Link>
             <NavDropdown id="about" title="About">
-              <NavDropdown.Item as="div">Company Profile</NavDropdown.Item>
-              <NavDropdown.Item as="div">Vision, Mission</NavDropdown.Item>
-              <NavDropdown.Item as="div">Culture</NavDropdown.Item>
-              <NavDropdown.Item as="div">Company Milestone</NavDropdown.Item>
+              <Link href="/content/at-glance">
+                <NavDropdown.Item
+                  as="div"
+                  className="cursor-pointer calibri-white"
+                >
+                  At Glance
+                </NavDropdown.Item>
+              </Link>
+              <Link href="/content/vision-mission">
+                <NavDropdown.Item
+                  as="div"
+                  className="cursor-pointer calibri-white"
+                >
+                  Vision, Mission
+                </NavDropdown.Item>
+              </Link>
+              <Link href="/content/values-culture">
+                <NavDropdown.Item
+                  as="div"
+                  className="cursor-pointer calibri-white"
+                >
+                  Values, Culture
+                </NavDropdown.Item>
+              </Link>
+              <NavDropdown.Item
+                as="div"
+                className="cursor-pointer calibri-white"
+              >
+                Major Customer
+              </NavDropdown.Item>
             </NavDropdown>
             <NavDropdown id="services" title="Services">
-              <NavDropdown.Item as="div">
-                Commercial Ship Operator
-              </NavDropdown.Item>
-              <NavDropdown.Item as="div">The Fleet</NavDropdown.Item>
-              <NavDropdown.Item as="div">Customer Assistance</NavDropdown.Item>
-              <NavDropdown.Item as="div">Major Customer</NavDropdown.Item>
+              <Link href="/content/chartering">
+                <NavDropdown.Item
+                  as="div"
+                  className="cursor-pointer calibri-white"
+                >
+                  Chartering
+                </NavDropdown.Item>
+              </Link>
+              <Link href="/content/trading">
+                <NavDropdown.Item
+                  as="div"
+                  className="cursor-pointer calibri-white"
+                >
+                  Trading
+                </NavDropdown.Item>
+              </Link>
+              <Link href="/content/shipping-agency">
+                <NavDropdown.Item
+                  as="div"
+                  className="cursor-pointer calibri-white"
+                >
+                  Shipping Agency
+                </NavDropdown.Item>
+              </Link>
             </NavDropdown>
-            <Nav.Link as="div">Contact</Nav.Link>
+            <Link href="/content/fleet">
+              <Nav.Link as="div" className="cursor-pointer">
+                Fleet
+              </Nav.Link>
+            </Link>
+            <Nav.Link as="div" className="cursor-pointer">
+              Contact
+            </Nav.Link>
           </Nav>
         </Col>
         <Col lg={{ span: 2 }}>

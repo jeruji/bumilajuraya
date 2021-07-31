@@ -6,7 +6,7 @@ import WA from "public/images/logo-wa.svg";
 
 export default function Footer() {
   return (
-    <Container className="bg-gray mw-100 p-4 mt-5">
+    <Container className="bg-gray mw-100 p-4 mt-5 mb-3">
       <Row>
         <Col style={{ display: "table" }}>
           <span
