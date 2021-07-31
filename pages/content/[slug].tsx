@@ -28,12 +28,12 @@ export default function ContentBySlug({ pages }) {
     <>
       <Header />
       <Container className="mw-100">
-        <Col>
+        <Col style={{ position: "relative" }}>
+          <span className="title-content">{pages.name}</span>
           <Col lg="4" className="calibri-white text-image-positioning">
             {pages.description && <BlogContent content={pages.description} />}
           </Col>
           <Col>
-            <span className="title-content">{pages.name}</span>
             <Image
               className="w-100"
               src={urlFor(pages.images).url()}

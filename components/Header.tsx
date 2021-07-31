@@ -13,7 +13,7 @@ import Search from "public/images/Search.svg";
 
 export default function Header() {
   return (
-    <Container className="bg-gray mw-100 mt-3">
+    <Container className="bg-gray mw-100 mt-3 header-z-position">
       <Row className="margin-center">
         <Col lg="3" xs="4">
           <Image src="/images/logo-blr-50.png" className="p-4 width-logo" />
