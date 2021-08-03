@@ -17,8 +17,10 @@ export default function ContentBySlug({ pages }) {
   if (router.isFallback) {
     return (
       <>
-        <Header />
-        <Container className="mw-100">Loading</Container>
+        <Container className="mw-100">
+          <Header />
+          <span>Loading</span>
+        </Container>
         <Footer />
       </>
     );
@@ -26,8 +28,8 @@ export default function ContentBySlug({ pages }) {
 
   return (
     <>
-      <Header />
       <Container className="mw-100">
+        <Header />
         <Col style={{ position: "relative" }}>
           <span className="title-content">{pages.name}</span>
           <Col lg="4" className="calibri-white text-image-positioning">

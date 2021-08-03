@@ -9,9 +9,12 @@ import {
   FormControl,
 } from "react-bootstrap";
 import Link from "next/link";
+import Router from "next/router";
+import { useState } from "react";
 import Search from "public/images/Search.svg";
 
 export default function Header() {
+  const [searchValue, setSearchValue] = useState("");
   return (
     <Container className="bg-gray mw-100 mt-3 header-z-position">
       <Row className="margin-center">
@@ -50,12 +53,14 @@ export default function Header() {
                   Values, Culture
                 </NavDropdown.Item>
               </Link>
-              <NavDropdown.Item
-                as="div"
-                className="cursor-pointer calibri-white"
-              >
-                Major Customer
-              </NavDropdown.Item>
+              <Link href="/content/major-customer">
+                <NavDropdown.Item
+                  as="div"
+                  className="cursor-pointer calibri-white"
+                >
+                  Major Customer
+                </NavDropdown.Item>
+              </Link>
             </NavDropdown>
             <NavDropdown id="services" title="Services">
               <Link href="/content/chartering">
@@ -88,9 +93,11 @@ export default function Header() {
                 Fleet
               </Nav.Link>
             </Link>
-            <Nav.Link as="div" className="cursor-pointer">
-              Contact
-            </Nav.Link>
+            <Link href="/content/contact-us">
+              <Nav.Link as="div" className="cursor-pointer">
+                Contact
+              </Nav.Link>
+            </Link>
           </Nav>
         </Col>
         <Col lg={{ span: 2 }}>
@@ -99,6 +106,8 @@ export default function Header() {
               type="text"
               placeholder="Search"
               className="d-inline-block"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
             />
           </Form>
         </Col>
@@ -106,7 +115,10 @@ export default function Header() {
           <Image
             src={Search}
             alt="Search"
-            className="pointer-link vertical-center"
+            className="cursor-pointer vertical-center"
+            onClick={() => {
+              Router.push(`/search/${searchValue}`);
+            }}
           />
         </Col>
       </Row>
