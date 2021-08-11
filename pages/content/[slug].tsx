@@ -81,7 +81,7 @@ export default function ContentBySlug({ pages }) {
                 />
               </Col>
             </Row>
-            <Row>
+            <Row className="bg-img-mobile">
               <Col style={{ marginTop: "20px" }}>
                 <span className="title-mobile">{pages.name}</span>
                 <Col

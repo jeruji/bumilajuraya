@@ -4,7 +4,7 @@ import ErrorPage from "next/error";
 import Link from "next/link";
 import { Container, Row, Col, Table } from "react-bootstrap";
 import BlogContent from "components/BlogContent";
-import Header from "components/Header";
+import DetectWidth from "components/DetectWidth";
 import Footer from "components/Footer";
 
 const SearchContent = ({ contents, searchParam }) => {
@@ -17,8 +17,8 @@ const SearchContent = ({ contents, searchParam }) => {
   if (router.isFallback) {
     return (
       <>
+        <DetectWidth />
         <Container className="mw-100">
-          <Header />
           <span>Loading</span>
         </Container>
         <Footer />
@@ -28,8 +28,8 @@ const SearchContent = ({ contents, searchParam }) => {
 
   return (
     <>
+      <DetectWidth />
       <Container className="mw-100">
-        <Header />
         <Row style={{ padding: "50px" }}>
           <Col>Search Results for : {searchParam}</Col>
         </Row>

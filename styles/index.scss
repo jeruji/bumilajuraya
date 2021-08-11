@@ -81,6 +81,11 @@ $calibry: Calibri, sans-serif;
   color: $colorWhite;
 }
 
+.bg-img-mobile {
+  background: url("/images/mobile-bg.png") no-repeat top center;
+  background-size: contain;
+}
+
 .bg-dark .dropdown-menu {
   background-color: $colorMenuDefault;
 }
