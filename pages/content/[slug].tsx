@@ -12,14 +12,16 @@ export default function ContentBySlug({ pages }) {
   const router = useRouter();
 
   const [windowWidth, setWindowWidth] = useState(0);
-  const [pageSlug] = useState(pages.slug);
+  const [pageSlug] = useState(pages ? pages.slug : "");
 
   useEffect(() => {
     setWindowWidth(document.documentElement.clientWidth);
-    if (pageSlug !== pages.slug) {
-      window.location.reload();
+    if (pages.slug) {
+      if (pageSlug !== pages.slug) {
+        window.location.reload();
+      }
     }
-  }, [pages.slug]);
+  }, [pages]);
 
   useLayoutEffect(() => {
     function updateSize() {
