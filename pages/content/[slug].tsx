@@ -1,14 +1,34 @@
+import { useEffect, useLayoutEffect, useState } from "react";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
-import Header from "components/Header";
 import Footer from "components/Footer";
+import DetectWidth from "components/DetectWidth";
 import BlogContent from "components/BlogContent";
 import { getAllPages, getPageBySlug } from "lib/api";
-import { Container, Image, Col } from "react-bootstrap";
+import { Container, Image, Col, Row } from "react-bootstrap";
 import { urlFor } from "lib/api";
 
 export default function ContentBySlug({ pages }) {
   const router = useRouter();
+
+  const [windowWidth, setWindowWidth] = useState(0);
+  const [pageSlug] = useState(pages.slug);
+
+  useEffect(() => {
+    setWindowWidth(document.documentElement.clientWidth);
+    if (pageSlug !== pages.slug) {
+      window.location.reload();
+    }
+  }, [pages.slug]);
+
+  useLayoutEffect(() => {
+    function updateSize() {
+      setWindowWidth(document.documentElement.clientWidth);
+    }
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  });
 
   if (!router.isFallback && !pages?.slug) {
     return <ErrorPage statusCode={404} />;
@@ -17,8 +37,8 @@ export default function ContentBySlug({ pages }) {
   if (router.isFallback) {
     return (
       <>
+        <DetectWidth />
         <Container className="mw-100">
-          <Header />
           <span>Loading</span>
         </Container>
         <Footer />
@@ -28,21 +48,46 @@ export default function ContentBySlug({ pages }) {
 
   return (
     <>
+      <DetectWidth />
       <Container className="mw-100">
-        <Header />
-        <Col style={{ position: "relative" }}>
-          <span className="title-content">{pages.name}</span>
-          <Col lg="4" className="calibri-white text-image-positioning">
-            {pages.description && <BlogContent content={pages.description} />}
+        {windowWidth > 1024 && (
+          <Col style={{ position: "relative" }}>
+            <span className="title-content">{pages.name}</span>
+            <Col lg="4" className="calibri-white text-image-positioning">
+              {pages.description && <BlogContent content={pages.description} />}
+            </Col>
+            <Col>
+              <Image
+                className="w-100"
+                src={urlFor(pages.images).url()}
+                alt={pages.description}
+              />
+            </Col>
           </Col>
-          <Col>
-            <Image
-              className="w-100"
-              src={urlFor(pages.images).url()}
-              alt={pages.description}
-            />
-          </Col>
-        </Col>
+        )}
+        {windowWidth <= 1024 && (
+          <>
+            <Row>
+              <Col>
+                <Image
+                  className="w-100"
+                  src={urlFor(pages.images).url()}
+                  alt={pages.description}
+                />
+              </Col>
+            </Row>
+            <Row>
+              <Col style={{ marginTop: "20px" }}>
+                <span className="title-mobile">{pages.name}</span>
+                <Col style={{ textAlign: "justify", marginTop: "20px" }}>
+                  {pages.description && (
+                    <BlogContent content={pages.description} />
+                  )}
+                </Col>
+              </Col>
+            </Row>
+          </>
+        )}
       </Container>
       <Footer />
     </>

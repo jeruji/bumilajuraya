@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import Header from "components/Header";
+import DetectWidth from "components/DetectWidth";
 import ImageCarousel from "components/ImageCarousel";
 import Footer from "components/Footer";
 import { getCarouselImages } from "lib/api";
@@ -7,8 +7,8 @@ import { getCarouselImages } from "lib/api";
 export default function Home({ images }) {
   return (
     <>
+      <DetectWidth />
       <Container className="mw-100">
-        <Header />
         <ImageCarousel images={images[0].images} />
       </Container>
       <Footer />
