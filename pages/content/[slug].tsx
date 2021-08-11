@@ -16,7 +16,7 @@ export default function ContentBySlug({ pages }) {
 
   useEffect(() => {
     setWindowWidth(document.documentElement.clientWidth);
-    if (pages.slug) {
+    if (pages.slug && windowWidth <= 1024) {
       if (pageSlug !== pages.slug) {
         window.location.reload();
       }
@@ -55,7 +55,10 @@ export default function ContentBySlug({ pages }) {
         {windowWidth > 1024 && (
           <Col style={{ position: "relative" }}>
             <span className="title-content">{pages.name}</span>
-            <Col lg="4" className="calibri-white text-image-positioning">
+            <Col
+              lg="4"
+              className="calibri-font white-color text-image-positioning"
+            >
               {pages.description && <BlogContent content={pages.description} />}
             </Col>
             <Col>
@@ -81,7 +84,10 @@ export default function ContentBySlug({ pages }) {
             <Row>
               <Col style={{ marginTop: "20px" }}>
                 <span className="title-mobile">{pages.name}</span>
-                <Col style={{ textAlign: "justify", marginTop: "20px" }}>
+                <Col
+                  style={{ textAlign: "justify", marginTop: "20px" }}
+                  className="calibri-font"
+                >
                   {pages.description && (
                     <BlogContent content={pages.description} />
                   )}

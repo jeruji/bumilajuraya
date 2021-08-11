@@ -32,7 +32,7 @@ export default function Header() {
               <Link href="/content/at-glance">
                 <NavDropdown.Item
                   as="div"
-                  className="cursor-pointer calibri-white"
+                  className="cursor-pointer calibri-font"
                 >
                   At Glance
                 </NavDropdown.Item>
@@ -40,7 +40,7 @@ export default function Header() {
               <Link href="/content/vision-mission">
                 <NavDropdown.Item
                   as="div"
-                  className="cursor-pointer calibri-white"
+                  className="cursor-pointer calibri-font"
                 >
                   Vision, Mission
                 </NavDropdown.Item>
@@ -48,7 +48,7 @@ export default function Header() {
               <Link href="/content/values-culture">
                 <NavDropdown.Item
                   as="div"
-                  className="cursor-pointer calibri-white"
+                  className="cursor-pointer calibri-font"
                 >
                   Values, Culture
                 </NavDropdown.Item>
@@ -56,7 +56,7 @@ export default function Header() {
               <Link href="/content/major-customer">
                 <NavDropdown.Item
                   as="div"
-                  className="cursor-pointer calibri-white"
+                  className="cursor-pointer calibri-font"
                 >
                   Major Customer
                 </NavDropdown.Item>
@@ -66,7 +66,7 @@ export default function Header() {
               <Link href="/content/chartering">
                 <NavDropdown.Item
                   as="div"
-                  className="cursor-pointer calibri-white"
+                  className="cursor-pointer calibri-font"
                 >
                   Chartering
                 </NavDropdown.Item>
@@ -74,7 +74,7 @@ export default function Header() {
               <Link href="/content/trading">
                 <NavDropdown.Item
                   as="div"
-                  className="cursor-pointer calibri-white"
+                  className="cursor-pointer calibri-font"
                 >
                   Trading
                 </NavDropdown.Item>
@@ -82,7 +82,7 @@ export default function Header() {
               <Link href="/content/shipping-agency">
                 <NavDropdown.Item
                   as="div"
-                  className="cursor-pointer calibri-white"
+                  className="cursor-pointer calibri-font"
                 >
                   Shipping Agency
                 </NavDropdown.Item>

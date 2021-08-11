@@ -72,10 +72,13 @@ $calibry: Calibri, sans-serif;
   }
 }
 
-.calibri-white {
+.calibri-font {
   font-size: 12pt;
-  color: $colorWhite;
   font-family: $calibry;
+}
+
+.white-color {
+  color: $colorWhite;
 }
 
 .bg-dark .dropdown-menu {
