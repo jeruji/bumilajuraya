@@ -3,10 +3,11 @@ import { Container, Row, Image } from "react-bootstrap";
 import DetectWidth from "components/DetectWidth";
 import ImageCarousel from "components/ImageCarousel";
 import Footer from "components/Footer";
+import HeadTitle from "components/HeadTitle";
 import Link from "next/link";
 import { getCarouselImages } from "lib/api";
 
-export default function Home({ images }) {
+export default function Home({ images, images_mobile }) {
   const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
@@ -24,9 +25,17 @@ export default function Home({ images }) {
 
   return (
     <>
+      <HeadTitle
+        title="Bumi Laju Raya - Home"
+        description="Bumi Laju Raya - Providing Logistic Solutions"
+      />
       <DetectWidth />
       <Container className="mw-100">
-        <ImageCarousel images={images[0].images} />
+        <ImageCarousel
+          images={
+            windowWidth > 1024 ? images[0].images : images_mobile[0].images
+          }
+        />
       </Container>
       {windowWidth <= 1024 && (
         <>
@@ -88,8 +97,9 @@ export default function Home({ images }) {
 
 export async function getStaticProps() {
   const images = await getCarouselImages("carousel");
+  const images_mobile = await getCarouselImages("carousel mobile");
   return {
-    props: { images },
+    props: { images, images_mobile },
     revalidate: false,
   };
 }

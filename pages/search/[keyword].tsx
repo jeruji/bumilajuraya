@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Container, Row, Col, Table } from "react-bootstrap";
 import BlogContent from "components/BlogContent";
 import DetectWidth from "components/DetectWidth";
+import HeadTitle from "components/HeadTitle";
 import Footer from "components/Footer";
 
 const SearchContent = ({ contents, searchParam }) => {
@@ -17,6 +18,10 @@ const SearchContent = ({ contents, searchParam }) => {
   if (router.isFallback) {
     return (
       <>
+        <HeadTitle
+          title={`Bumi Laju Raya - ${searchParam}`}
+          description="Bumi Laju Raya - Search Page"
+        />
         <DetectWidth />
         <Container className="mw-100">
           <span>Loading</span>

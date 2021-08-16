@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useState } from "react";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Footer from "components/Footer";
+import HeadTitle from "components/HeadTitle";
 import DetectWidth from "components/DetectWidth";
 import BlogContent from "components/BlogContent";
 import { getAllPages, getPageBySlug } from "lib/api";
@@ -50,8 +51,14 @@ export default function ContentBySlug({ pages }) {
 
   return (
     <>
+      <HeadTitle
+        title={`Bumi Laju Raya - ${pages.name}`}
+        description="Bumi Laju Raya - Content Page"
+      />
       <DetectWidth />
-      <Container className="mw-100">
+      <Container
+        className={windowWidth > 1024 ? "mw-100" : "mw-100 bg-img-mobile"}
+      >
         {windowWidth > 1024 && (
           <Col style={{ position: "relative" }}>
             <span className="title-content">{pages.name}</span>
@@ -76,12 +83,12 @@ export default function ContentBySlug({ pages }) {
               <Col>
                 <Image
                   className="w-100"
-                  src={urlFor(pages.images).url()}
+                  src={urlFor(pages.images_mobile).url()}
                   alt={pages.description}
                 />
               </Col>
             </Row>
-            <Row className="bg-img-mobile">
+            <Row>
               <Col style={{ marginTop: "20px" }}>
                 <span className="title-mobile">{pages.name}</span>
                 <Col
