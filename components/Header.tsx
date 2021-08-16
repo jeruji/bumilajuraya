@@ -53,12 +53,12 @@ export default function Header() {
                   Values, Culture
                 </NavDropdown.Item>
               </Link>
-              <Link href="/content/major-customer">
+              <Link href="/content/customer">
                 <NavDropdown.Item
                   as="div"
                   className="cursor-pointer calibri-font"
                 >
-                  Major Customer
+                  Customer
                 </NavDropdown.Item>
               </Link>
             </NavDropdown>

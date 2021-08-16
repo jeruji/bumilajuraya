@@ -55,8 +55,8 @@ export default function HeaderMobile() {
                 <Link href="/content/values-culture">
                   <NavDropdown.Item as="div">Values, Culture</NavDropdown.Item>
                 </Link>
-                <Link href="/content/major-customer">
-                  <NavDropdown.Item as="div">Major Customer</NavDropdown.Item>
+                <Link href="/content/customer">
+                  <NavDropdown.Item as="div">Customer</NavDropdown.Item>
                 </Link>
               </NavDropdown>
               <NavDropdown
