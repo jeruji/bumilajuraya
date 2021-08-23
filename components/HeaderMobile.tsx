@@ -86,6 +86,13 @@ export default function HeaderMobile() {
                   Contact
                 </Nav.Link>
               </Link>
+              <Nav.Link
+                as="a"
+                href="https://drive.google.com/file/d/1gJ1YutdjlgnLw82jbEraQN-jbc_azGmk/view?usp=sharing"
+                target="_blank"
+              >
+                Company Profile
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
