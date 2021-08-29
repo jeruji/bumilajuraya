@@ -21,7 +21,7 @@ export default function Header() {
         <Col lg="3" xs="4">
           <Image src="/images/logo-blr-50.png" className="p-4 width-logo" />
         </Col>
-        <Col lg={{ span: 4, offset: 2 }}>
+        <Col lg={{ span: 6 }}>
           <Nav className="vertical-center">
             <Link href="/">
               <Nav.Link as="div" className="cursor-pointer">
