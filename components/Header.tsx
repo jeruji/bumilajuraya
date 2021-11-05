@@ -98,13 +98,32 @@ export default function Header() {
                 Contact
               </Nav.Link>
             </Link>
-            <Nav.Link
-              as="a"
-              href="https://drive.google.com/file/d/1gJ1YutdjlgnLw82jbEraQN-jbc_azGmk/view?usp=sharing"
-              target="_blank"
-            >
-              Company Profile
-            </Nav.Link>
+            <NavDropdown id="company-profile" title="Company Profile">
+              <a
+                href="https://drive.google.com/file/d/1gJ1YutdjlgnLw82jbEraQN-jbc_azGmk/view?usp=sharing"
+                target="_blank"
+                style={{ textDecoration: "none" }}
+              >
+                <NavDropdown.Item
+                  as="div"
+                  className="cursor-pointer calibri-font"
+                >
+                  PT. Bumi Laju Raya
+                </NavDropdown.Item>
+              </a>
+              <a
+                href="https://drive.google.com/file/d/1RDRLbYmec0tLVAkAt3zsMMQT66YzA_ed/view?usp=sharing"
+                target="_blank"
+                style={{ textDecoration: "none" }}
+              >
+                <NavDropdown.Item
+                  as="div"
+                  className="cursor-pointer calibri-font"
+                >
+                  PT. Pelabuhan Aria Lestari
+                </NavDropdown.Item>
+              </a>
+            </NavDropdown>
           </Nav>
         </Col>
         <Col lg={{ span: 2 }}>
